@@ -6,25 +6,120 @@
 
 ### Задание 1
 
-`Приведите ответ в свободной форме........`
+`Базу данных можно разбить на 8 таблиц:`
 
-1. `Заполните здесь этапы выполнения, если требуется ....`
-2. `Заполните здесь этапы выполнения, если требуется ....`
-3. `Заполните здесь этапы выполнения, если требуется ....`
-4. `Заполните здесь этапы выполнения, если требуется ....`
-5. `Заполните здесь этапы выполнения, если требуется ....`
-6. 
+1. employee
+2. employee_position
+3. division_type
+4. division
+5. division_address
+6. region
+7. city
+8. project
 
-```
-Поле для вставки кода...
-....
-....
-....
-....
-```
+---
 
-`При необходимости прикрепитe сюда скриншоты
-![Название скриншота 1](ссылка на скриншот 1)`
+`Состав и типы данных в этих таблицах следующие:`
+
+employee (
+
+employee_id, первичный ключ, serial,
+
+name, varchar(50),
+
+salary, money,
+
+position_id, внешний ключ, integer,
+
+division_type_id, внешний ключ, integer,
+
+division_id, внешний ключ, integer,
+
+hire_date, datetime,
+
+division_address_id, внешний ключ, integer,
+
+project_id, внешний ключ, integer
+
+)
+
+---
+
+employee_position (
+
+position_id, первичный ключ, serial,
+
+position, varchar(50)
+
+)
+
+---
+
+division_type (
+
+division_type_id, первичный ключ, serial,
+
+name, varchar(50)
+
+)
+
+---
+
+division (
+
+division_id, первичный ключ, serial,
+
+name, varchar(50),
+
+division_type_id, внешний ключ, integer,
+
+division_address_id, внешний ключ, integer,
+
+)
+
+---
+
+division_address (
+
+division_address_id, первичный ключ, serial,
+
+region_id, внешний ключ, integer,
+
+city_id, внешний ключ, integer,
+
+address, varchar(50)
+
+)
+
+---
+
+region (
+
+region_id, первичный ключ, serial,
+
+name, varchar(50)
+
+)
+
+---
+
+city (
+
+city_id, первичный ключ, serial,
+
+name, varchar(50)
+
+)
+
+---
+
+project (
+
+project_id, первичный ключ, serial,
+
+name, varchar(50)
+
+)
 
 
 ---
